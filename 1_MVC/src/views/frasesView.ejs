@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h4>Adicionar nova frase</h4>
+    <form action="/frases/add" method="POST">
+      <table>
+        <tr>
+          <td>
+            <input type="text" name="frase" placeholder="frase" />
+          </td>
+          <td><input type="submit" value="add" /><br /></td>
+        </tr>
+      </table>
+    </form>
+    <br />
+    <% if (data.length > 0) {%>
+    <h2>AllFrases</h2>
+    <table
+      border="1"
+      style="
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font: 600;
+      "
+    >
+      <thead>
+        <tr>
+          <th>frase</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i < data.length; i++) {%>
+        <tr>
+          <td><%= data[i]%></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% } %>
+  </body>
+</html>
